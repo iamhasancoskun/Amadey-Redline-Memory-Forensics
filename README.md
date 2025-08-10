@@ -1,3 +1,5 @@
+English ([README.en.md](README.en.md)) | Türkçe (this page)
+
 # Vaka Analizi: Bir Amadey Trojan Enfeksiyonunun Derinlemesine Hafıza Adli Bilişimi
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
