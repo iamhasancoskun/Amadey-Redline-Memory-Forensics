@@ -79,9 +79,14 @@ Boş komut satırları, `oneetx.exe`'nin normal bir şekilde başlatılmadığı
 ![Filtrelenmiş C2 Bağlantısı](assets/07-netscan-c2-connection.png)
 
 - Kanıt B: Kalıcılık ve Tam Dosya Yolu (`windows.registry.printkey`)  
-Zararlının, sistem yeniden başlatıldığında hayatta kalmak için `Tammam` kullanıcısının **`HKCU\...\Run`** anahtarını kullandığı tespit edildi. Bu ipucu, bellekteki `strings` kalıntılarıyla birleştirildiğinde, zararlının disk üzerindeki tam yolu ortaya çıktı: `C:\Users\Tammam\AppData\Local\Temp\c3912af058\oneetx.exe`.
+Zararlının, sistem yeniden başlatıldığında hayatta kalmak için `Tammam` kullanıcısının **`HKCU\\...\\Run`** anahtarını kullandığı tespit edildi. Bu ipucu, bellekteki `strings` kalıntılarıyla birleştirildiğinde, zararlının disk üzerindeki tam yolu ortaya çıktı: `C:\\Users\\Tammam\\AppData\\Local\\Temp\\c3912af058\\oneetx.exe`.
 
 ![Registry Kalıcılık Anahtarı](assets/08-registry-persistence-key.png)
+
+#### Strings ile Tam Yol Görselleştirme
+`strings`/`grep` analizi sonucu, tam yolun terminal çıktısı ekran görüntüsü:
+
+![Full path from strings](assets/09.full_path_.png)
 
 ---
 
@@ -91,11 +96,14 @@ Bu analiz, Amadey Trojan'ın gizlenme, ağ iletişimi ve kalıcılık yöntemler
 | Tür | Değer |
 |---|---|
 | **Zararlı Ailesi** | Amadey Trojan |
-| **Dosya Yolu** | `C:\Users\Tammam\AppData\Local\Temp\c3912af058\oneetx.exe` |
+| **Dosya Yolu** | `\\??\\C:\\Users\\Tammam\\AppData\\Local\\Temp\\c3912af058\\oneetx.exe` (=`C:\\Users\\Tammam\\AppData\\Local\\Temp\\c3912af058\\oneetx.exe`) |
 | **SHA-256 (Enjekte)** | `0c4f8505f12acae6e1598a2f73e64cfa8c1d0ee19841f441e77c2d7d39711f77` |
 | **C2 IP Adresi** | `77.91.124.20:80` |
 | **C2 URL** | `http://77.91.124.20/store/games/index.php` |
-| **Kalıcılık** | `HKCU\Software\Microsoft\Windows\CurrentVersion\Run` |
+| **Kalıcılık** | `HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run` |
+
+> Not: Orijinal registry değerinde NT path biçimi `\\??\\C:\\Users\\Tammam\\AppData\\Local\\Temp\\c3912af058\\oneetx.exe` kullanılmıştır; kullanıcı-modunda `C:\\` ile eşdeğerdir.
+> HKCU = HKEY_CURRENT_USER (aktif kullanıcının profilindeki NTUSER.DAT hive'ı)
 
 ---
 
