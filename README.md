@@ -77,6 +77,7 @@ Boş komut satırları, `oneetx.exe`'nin normal bir şekilde başlatılmadığı
 `netscan` analizi, `oneetx.exe` sürecinin Komuta & Kontrol (C2) sunucusu olan **`77.91.124.20`** IP adresine **port 80** üzerinden bağlandığını ortaya çıkardı.
 
 ![Filtrelenmiş C2 Bağlantısı](assets/07-netscan-c2-connection.png)
+![Foreign Address: C2 IP](assets/06-netscan-foreign-adr.png)
 
 - Kanıt B: Kalıcılık ve Tam Dosya Yolu (`windows.registry.printkey`)  
 Zararlının, sistem yeniden başlatıldığında hayatta kalmak için `Tammam` kullanıcısının **`HKCU\\...\\Run`** anahtarını kullandığı tespit edildi. Bu ipucu, bellekteki `strings` kalıntılarıyla birleştirildiğinde, zararlının disk üzerindeki tam yolu ortaya çıktı: `C:\\Users\\Tammam\\AppData\\Local\\Temp\\c3912af058\\oneetx.exe`.
