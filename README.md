@@ -1,5 +1,10 @@
 # Vaka Analizi: Bir Amadey Trojan Enfeksiyonunun Derinlemesine Hafıza Adli Bilişimi
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+![Volatility 3](https://img.shields.io/badge/Volatility-3-blue)
+![Windows 10 x64](https://img.shields.io/badge/Platform-Windows%2010%20x64-lightgrey)
+[![Author: iamhasancoskun](https://img.shields.io/badge/Author-iamhasancoskun-black)](https://github.com/iamhasancoskun)
+
 **Yazar:** Hasan Coşkun  
 **Tarih:** 07 Ağustos 2025  
 **Platform:** [CyberDefenders](https://cyberdefenders.org/)  
@@ -144,3 +149,7 @@ grep -n "77.91.124.20" all_strings.txt
 python3 vol.py -f temp_extract_dir/MemoryDump.mem \
   windows.registry.printkey --key "Microsoft\\Windows\\CurrentVersion\\Run"
 ```
+
+---
+
+Yazar: [iamhasancoskun](https://github.com/iamhasancoskun)
