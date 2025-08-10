@@ -1,0 +1,22 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyc
+
+# OS
+.DS_Store
+
+# Environments
+.env
+.venv
+
+# Archives
+*.zip
+*.7z
+*.tar
+*.gz
+
+# Misc
+.all_strings.txt
+all_strings.txt
+
