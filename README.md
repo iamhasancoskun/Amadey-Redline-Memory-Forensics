@@ -36,6 +36,10 @@ Bu analiz, her adımda bir hipotez kurup, bu hipotezi test etmek için ilgili ar
 
 ![Sistem Bilgileri ve Timestomp Anomalisi](assets/1-redline-windows-info-windows-pslist.png)
 
+> Not: Windows 10 çekirdeği için 1995 PE TimeDateStamp mantıksızdır. Bu tipik bir backdating/timestomp göstergesidir; daha nadiren parser/packer anomalisi olabilir. Doğrulama önerisi: MFT ($STANDARD_INFORMATION vs $FILE_NAME), Prefetch yürütülme zamanları, Registry (UserAssist, ShimCache, Run).
+
+
+
 ### Faz 2: Süreç Analizi ve İlk Şüphelilerin Belirlenmesi
 **Hipotez:** Sistemde, zararlı aktiviteye işaret eden anormal süreçler veya süreç ilişkileri bulunmalıdır.
 

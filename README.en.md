@@ -30,6 +30,10 @@ Each step states a hypothesis and the test used to validate or refute it.
 
 ![System info and timestomp anomaly](assets/1-redline-windows-info-windows-pslist.png)
 
+> Note: A 1995 PE TimeDateStamp is implausible for Windows 10. This typically indicates backdating/timestomp; less commonly a parser/packer artifact. Validate via MFT ($STANDARD_INFORMATION vs $FILE_NAME), Prefetch execution times, and Registry (UserAssist, ShimCache, Run).
+
+
+
 ### Phase 2 — Process Reconnaissance
 - Hypothesis: Malicious behavior should surface in process listings/relationships.
 - Command: `python3 vol.py -f ... windows.pslist | grep -E "ImageFileName|oneetx.exe|rundll32.exe"`
